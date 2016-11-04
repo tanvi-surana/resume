@@ -1,149 +1,261 @@
-% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
-% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
-% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.1 (30/4/2014)
 %
-% (c) 2012 Scott Clark <sc932@cornell.edu> cam.cornell.edu/~sc932
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
 %
-%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[letterpaper,10pt]{article}
-
-%-----------------------------------------------------------
-\usepackage[empty]{fullpage}
-\usepackage{color}
-\usepackage{hyperref}
-\definecolor{mygrey}{gray}{0.80}
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
-
-% Adjust margins to 0.5in on all sides
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.0in}
-\addtolength{\topmargin}{-0.5in}
-%\addtolength{\textheight}{1.0in}
-
-%-----------------------------------------------------------
-%Custom commands
-\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
-\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
-\newcommand{\ressubheading}[4]{
-\begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
-		\textbf{#1} & \textit{#4} \\
-\end{tabular*}\vspace{-6pt}}
-
-\newcommand{\ressubheadinged}[4]{
-\begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
-		\textbf{#1} & #2 \\
-		\textit{#3} & \textit{#4}\\
-\end{tabular*}\vspace{-6pt}}
-
-%-----------------------------------------------------------
+\documentclass[]{deedy-resume-openfont}
 
 
 \begin{document}
 
-\begin{tabular*}{7.5in}{l@{\extracolsep{\fill}}r}
-\textbf{\large Tanvi Surana}\\
-\href{http://tanvi-surana.github.io/}{tanvi-surana.github.io}\\
-tanvisurana20@gmail.com
-\end{tabular*}
-\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \lastupdated
 
-\vspace{0.1in}
-
-\resheading{Education}
-\begin{itemize}
-\item
-\ressubheadinged{Indira Gandhi Delhi Technical University}{Delhi}{B.Tech Computer Science and Engineering}{August 2013 - Present}
-    
-    \begin{itemize}
-	\resitem{Performance: 82\%, 6 Semesters}
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-\item
-\ressubheadinged{Delhi Public School Rohini}{Delhi}{C.B.S.E, AISSCE}{}
-    \begin{itemize}
-	\resitem{Performance: 91.6\%}
-    \end{itemize}
-\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\resheading{Projects}
-\begin{itemize}
+% \namesection{Debarghya}{Das}{ \urlstyle{same}\url{http://debarghyadas.com} \\
+% \href{mailto:dd367@cornell.edu}{dd367@cornell.edu} | 607.379.5733
+% }
 
-\item
-	\ressubheading{Lifetime Of Wireless Sensor Networks}{Self}{Self}{Ongoing}
-	\begin{itemize}
-		\resitem{Increasing Lifetime of Wireless Sensor Networks}
-	\end{itemize}
-	
-\item
-	\ressubheading{Jewellery Website}{Self}{Self}{2016}
-	\begin{itemize}
-		\resitem{A Jewellery website that displays various products with customized user authorization system.  (Django,LESS)}
-	\end{itemize}
-
-\item
-	\ressubheading{Smart Secure}{Self}{Self}{2016}
-	\begin{itemize}
-		\resitem{A Raspberry Pi2 based home automation product that uses a GUI for user interaction. The device is a smart
-locker that alerts the owner in case of misuse of the locker. In case of an invalid login, the owner is alerted with
-mail containing the photograph of the user. Immediately a call is placed and message is also sent. (Raspberry Pi2,Python)}
-	\end{itemize}
-
-\item
-	\ressubheading{Smart Bin}{Self}{Self}{2015}
-	\begin{itemize}
-		\resitem{Web app that had been designed to aid the volunteers of the NGO Reap Benefit based in Bengaluru to
-automate the tracking of dustbins fitted with sensors and educates the public for waste segregation activities.
-The application collected the data from sensors thus, helping volunteers analyze data using graphs. The app
-also displayed the shortest path between various bins at different localities.
-(Python, Django, Bootstrap, Google Maps API, D3.js, PostgreSQL)}
-	\end{itemize}
-	
-\item
-	\ressubheading{2048 Game}{Self}{Self}{2014}
-	\begin{itemize}
-		\resitem{Interactive version of the 2048 game made using web technologies. It works on the keyboard click events with
-changing colors and displaying the highest score.
-(HTML, CSS, JavaScript)}
-	\end{itemize}	
-
-\end{itemize}
-
-\resheading{Skills}
-\begin{itemize}
-\item \textbf{Languages:} C, C++, Git, Python, HTML, CSS, LESS, Javascript.
-
-\item \textbf{Framework:} Django
-
-\item \textbf{Basic Knowledge:} Cloudsim (Cloud Computing) and Network Programming.
-
-\end{itemize}
-
-\resheading{Volunteer}
-\begin{itemize}
-
-\item
-	\ressubheading{Learn IT Girl!}{Remote}{Mentor}{Mentor, Feb 2016 to April 2016}
-	\begin{itemize}
-		\resitem{Mentoring a student learn C++.}
-	\end{itemize}
-\end{itemize}
+\namesection{Tanvi}{Surana}{
+\href{mailto:tanvisurana20@gmail.com}{tanvisurana20@gmail.com} | \href{https://tanvi-surana.github.io}{\custombold{tanvi-surana.github.io}}
+}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\resheading{Achievements \& Awards}
-\begin{itemize}
-	\item Second Prize, Developers at Work, Technical Fest (CSI-IGDTUW).
-    
-	\item Scholar, Gold-Medalist, Silver-Medalist for excellent academic performance in school 
-University, 2010.
-\end{itemize}
+\begin{minipage}[t]{0.33\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education} 
+
+\subsection{Indira Gandhi Delhi}\subsection{Technical University}\subsection{ for Women}
+\descript{Bachelor of Technology in Computer Science}
+\location{Expected June 2017 | New Delhi, India \\ Percentage: 82.00}
+\sectionsep
 
 
-\end{document}
+\descript{Senior Secondary}
+\subsection{Delhi Public School, Rohini}
+\location{May 2012 | New Delhi, India \\ Percentage: 91.60}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LINKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Links}
+Website:// \href{https://tanvi-surana.github.io}{\custombold{tanvi-surana.github.io}} \\
+Github:// \href{https://github.com/tanvi-surana}{\custombold{tanvi-surana}} \\
+LinkedIn://  \href{https://www.linkedin.com/in/tanvisurana}{\custombold{tanvisurana}} \\
+Hackerearth://  \href{https://www.hackerearth.com/tanvi.surana}{\custombold{tanvi.surana}} \\
+Hackerrank://  \href{https://www.hackerrank.com/tanvisurana20}{\custombold{tanvisurana20}} \\
+CodeChef://  \href{https://www.codechef.com/users/skull2012}{\custombold{skull2012}} \\
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COURSEWORK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Coursework}
+\subsection{Graduate}
+Algorithm Design and Analysis \\
+Computer Networks \\
+Database Management System \\
+Data Structure \\
+Operating System \\
+Artificial Intelligence \\
+Cloud Computing \\
+Compiler Design \\
+Computer Organization and Architecture \\
+Data Warehousing and Data Mining 
+Network Programming\\
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Skills}
+\location{Languagess:}
+\textbullet{}C \textbullet{}   C++ \textbullet{} Git\textbullet{} JavaScript \textbullet{} Python \\ \textbullet{} HTML \textbullet{} CSS \textbullet{} LESS \ \\ 
+\location{Framework:}
+ \textbullet{} Django \\
+\location{Familiar:}
+\textbullet{}Cloudsim (Cloud Computing) \\ \textbullet{} Network Programming \
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %     EXPERIENCE
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Experience}
+
+% \runsubsection{Coursera}
+% \descript{| KPCB Fellow + Software Engineering Intern }
+% \location{Expected June 2014 – Sep 2014 | Mountain View, CA}
+% \vspace{\topsep} % Hacky fix for awkward extra vertical space
+% \begin{tightemize}\item 52 out of 2500 applicants chosen to be a KPCB Fellow 2014.
+% \end{tightemize}
+% \sectionsep
+
+% \runsubsection{Google}
+% \descript{| Software Engineering Intern }
+% \location{May 2013 – Aug 2013 | Mountain View, CA}
+% \begin{tightemize}
+% \item Worked on the YouTube Captions team in primarily vanilla Javascript and Python to plan, design and develop the full stack implementation of a new framework to add and edit Automatic Speech Recognition captions.\item Created a backbone.js-like framework for the Captions editor.\item All code was reviewed, perfected, and pushed to production.\end{tightemize}
+% \sectionsep
+
+% \runsubsection{Phabricator}
+% \descript{| Open Source Contributor \& Team Leader}
+% \location{Jan 2013 – May 2013 | Palo Alto, CA \& Ithaca, NY}
+% \begin{tightemize}
+% \item Phabricator is used daily by Facebook, Dropbox, Quora, Asana and more.\item I created the Meme generator, the entire Lipsum application, ported Tokens to different apps, fixed many bugs and more in PHP and Shell.\item Led a team from MIT, Cornell, IC London and UHelsinki for the project.\end{tightemize}
+% \sectionsep
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Projects
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Projects}
+
+Link to the source code of the projects: \href{https://github.com/tanvi-surana}{\custombold{GitHub}} \sectionsep
+
+\runsubsection{Increasing Efficiency Of Wireless Sensor Networks}
+\descript{| IGDTUW}
+\location{ October 2016| Delhi, India}
+Research Project based on increasing efficiency of wireless sensor networks
+\sectionsep
+\begin{tightemize} 
+\item Supervisor- Mr. Vivekanad Jha, Professor, IGDTUW
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Smart Bin}
+\descript{| GHC Hackathon}
+\location{September- November 2015 | Bangalore, India}
+Web app that had been designed to aid the volunteers of the NGO Reap Benefit based in Bengaluru to automate the tracking of dustbins fitted with sensors and educates the public for waste segregation activities. The application collected the data from sensors thus, helping volunteers analyze data using graphs. The app also displayed the shortest path between various bins at different localities. \\
+\sectionsep
+\begin{tightemize}
+\item Technology used- HTML, CSS, Python, D3, PostgreSQL, Google Maps, Bootstrap and Django Framework
+\end{tightemize}
+\sectionsep
+
+
+\runsubsection{Jewellery Website}
+\location{July 2016- Present | Delhi, India}
+A Jewellery website that displays various products with customized user authorization system.
+\begin{tightemize}
+\item Technology Used- HTML, CSS, Python, MySQL, Javascript ,LESS and Django Framework
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Smart Secure}
+\descript{| IGDTUW}
+\location{April 2016 | Delhi, India}
+A Raspberry Pi2 based home automation product that uses a GUI for user interaction. The device is a smart locker that alerts the owner in case of misuse of the locker. In case of an invalid login, the owner is alerted with mail containing the photograph of the user. Immediately a call is placed and message is also sent. \\
+\begin{tightemize}
+\item Technology used-Python,Raspberry Pi 2
+\end{tightemize}
+\sectionsep
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     {ACTIVITIES AND ACHIEVEMENTS}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ACTIVITIES AND ACHIEVEMENTS} 
+\runsubsection{ACADEMIC ACHIEVEMENTS}
+\begin{tightemize}
+\item \location{ Second Prize, Developers at Work,}Annual Technical Fest (CSI-IGDTUW)
+\item Participated in preliminary online round of \location{ACM- ICPC 2015}
+\item \location{Awarded Gold Medal, 2012}Excellent academic performance in school for 6 years
+\item \location{Awarded Silver Medal, 2010}Excellent academic performance in school for 5 years
+\end{tightemize}
+\sectionsep
+
+\runsubsection{POSITION OF RESPONSIBILITY}
+\begin{tightemize}
+\item Founder and Core Team Member of Unistash, IGDTUW: 2016
+\item Core Team Member of Society of Technical Research and Industrial Development, IGDTUW: 2014-2015
+\item Team Member of Event Management Team, Taarangana 2016- Cultural Festival of IGDTUW \\
+\end{tightemize}
+\sectionsep
+
+\runsubsection{EXTRA- CURRICULAR ACTIVITIES}
+\begin{tightemize}
+\item An active participant in extempore and debate competitions and have won various accolades
+\item Keen interest in playing musical instruments
+\end{tightemize} 
+
+\end{minipage} 
+\end{document}  \documentclass[]{article}
+
